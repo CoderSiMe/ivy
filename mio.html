@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class ="ivy">iwan moko? hulihin mo muna yung oo</h1>
+    <button class = "btn" >hindi</button>
+    <button class = "btn1" id="dodging-button">oo</button>
+</body>
+<style>
+    body{
+        background-color: rgb(187, 165, 98);
+        
+
+    }
+    .btn1{
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: lightblue;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 100px;
+        border-radius: 10px;
+    }
+    .btn{
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: lightblue;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 100px; 
+        border-radius: 10px;
+    }
+    .ivy {
+
+        position: relative;
+        right: -708px;
+        top: 20%;
+        color: blanchedalmond;
+
+    }
+</style>
+<script>
+   // Get a reference to the button with the ID "dodging-button"
+   const dodgingButton = document.getElementById("dodging-button");
+
+// Add a "mousemove" event listener to the button
+dodgingButton.addEventListener("mousemove", () => {
+  // Calculate the maximum X and Y positions within the visible client area
+  const maxX = window.innerWidth - dodgingButton.clientWidth;
+  const maxY = window.innerHeight - dodgingButton.clientHeight;
+
+  // Generate random X and Y coordinates within the maximum boundaries
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  // Update the button's position to make it appear at the random coordinates
+  dodgingButton.style.left = randomX + "px";
+  dodgingButton.style.top = randomY + "px";
+});
+
+</script>
+</html>
+
